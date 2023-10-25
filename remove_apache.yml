@@ -1,0 +1,14 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: DEinstalliert apache2 package
+    apt:
+      name: apache2
+      state: absent
+  - name: add php support for apache
+    apt:
+      name: UNINSTALLED libapache2-mod-php
+      state: absent
